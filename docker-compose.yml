@@ -1,0 +1,14 @@
+version: '3.8'
+services:
+  fast_api:
+    build: .
+    container_name: ubigeo_ven
+    init: true
+    restart: always
+    ports:
+      - "5001:5000"
+    volumes:
+      - type: bind
+        source: .
+        target: /code
+    working_dir: /code
